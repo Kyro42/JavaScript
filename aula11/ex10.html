@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Fine System</h1>
+    Vehicle speed: <input type="number" name="svel" id="svel"> Km/h 
+    <input type="button" value="Check" onclick="calc()">
+    <div id="result"></div>
+    <script>
+        function calc() {
+            var svel = window.document.getElementById('svel')
+            var vel = Number(svel.value)
+            var res = document.getElementById('result')
+            res.innerHTML = `<p>Your velocity was <strong>${vel} Km/h</strong></p>`
+            if (vel > 60) {
+                res.innerHTML +='<p>You exceeded the speed limit, you are <strong>fined!</strong></p>'
+            } else {
+                res.innerHTML +='<p>You did not exceeded the speed limit, you are <strong>NOT fined!</strong></p>'
+            }
+            res.innerHTML += `<p><strong>Always</strong> wear your seatbelt when driving!</p>`
+        }
+        
+    </script>
+</body>
+</html>

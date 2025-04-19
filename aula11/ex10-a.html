@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Am I a foreigner?</title>
+</head>
+<body>
+    <h1>Are you a foreigner?</h1>
+    <p>Where are you from? <input type="text" name="snat" id="snat"></p>
+    <p>Where are you living now? <input type="text" name="scoun" id="scoun"></p>
+    <input type="button" value="Check" onclick="foreign()">
+    <div id="res"></div>
+    <script>
+        function foreign() {
+            var nat = document.getElementById('snat').value
+            var coun = document.getElementById('scoun').value
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>You are from ${nat} and live in ${coun}</p>`
+            if (nat == coun) {
+                res.innerHTML += `<p>You are <strong>Native!</strong></p>`
+            } else {
+                res.innerHTML += `<p>You are <strong>Foreign!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
