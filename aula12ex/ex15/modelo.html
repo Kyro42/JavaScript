@@ -8,15 +8,26 @@
 </head>
 <body>
     <header>
-        <h1>Title</h1>
+        <h1>Age verify</h1>
     </header>
     <main>
         <section>
             <div>
-                Placeholder...
+                <p>Date of birth: 
+                    <input type="number" name="syear" id="syear" min="1" required placeholder="yyyy">
+                </p>
+                <p>Gender: 
+                    <input type="radio" name="gender" id="male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">Female</label>
+                </p>
+                <p>
+                    <input type="button" value="Submit" onclick="resu()">
+                </p>
             </div>
-            <div>
-                Placeholder...
+            <div id="res">
+                Fill out the form to check the result
             </div>
         </section>
     </main>
