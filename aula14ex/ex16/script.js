@@ -1,29 +1,32 @@
 function count(){
-    var sstart = document.getElementById('sstart').value
-    var send = document.getElementById('send').value
-    var sstep = document.getElementById('sstep').value
+    var sstart = document.getElementById('sstart')
+    var send = document.getElementById('send')
+    var sstep = document.getElementById('sstep')
     var res = document.getElementById('res')
-    var start = Number(sstart)
-    var end = Number(send)
-    var step = Number(sstep)
-    res.innerHTML = ''
-    if (step == ''){
-        window.alert('[ERROR] Step is null, considering Step 1')
-        step = 1
-        while (start < end){
-            res.innerHTML += `${start}, `
-            start += step
-        }
-        res.innerHTML += `${start}` 
-    } else if(start > end){
-        window.alert('[ERROR] Start is higher than End')
-    } else if(start == '') {
-        window.alert('[ERROR] Please type a Start')
+    if (sstart.value.length == ''){
+        window.alert('[ERROR] Please fill in Start')
+        res.innerHTML = ``
+    }else if (send.value.length == ''){
+        window.alert('[ERROR] Please fill in End')
+        res.innerHTML = ``
     }else {
-        while (start < end){
-            res.innerHTML += `${start}, `
-            start += step
+        var start = Number(sstart.value)
+        var end = Number(send.value)
+        var step = Number(sstep.value)
+        res.innerHTML = ``
+        if (sstep.value.length == ''){
+            window.alert('[ERROR] Step is Null, considering Step 1')
+            step = 1
         }
-        res.innerHTML += `${start}` 
+        if(start < end){
+            for (var c = start; c <= end; c += step){
+                res.innerHTML += `${c} \u{1F449} `
+            }
+        }else {
+            for (var c = start; c >= end; c -= step){
+                res.innerHTML += `${c} \u{1F449} `
+            }
+        }
+        res.innerHTML += `\u{1F3C1}`
     }
 }
