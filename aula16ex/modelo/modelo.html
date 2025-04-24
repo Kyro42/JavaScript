@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Numbers analyzer</h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <p>
+                    <label for="snum">Number (between 0  and 100): </label>
+                    <input type="number" name="snum" id="snum">
+                    <input type="button" value="Add" onclick="add()">
+                </p>
+            </div>
+            <div id="res">
+                <select name="area" id="area" size="8" >
+                    
+                </select>
+                <p>
+                    <input type="button" value="Finish" onclick="finish()">
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
