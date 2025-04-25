@@ -18,6 +18,8 @@ function add() {
         item.text = `Number ${num} added`
         area.appendChild(item)
     }
+    snum.value = ''
+    snum.focus()
 }
 function finish(){
     if (anum.length == 0) {
